@@ -1,27 +1,6 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Hero3D } from "@/components/Hero3D";
 
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "SHANK — Fullstack Developer Portfolio" },
-      {
-        name: "description",
-        content:
-          "Fullstack developer building typed APIs, real-time data planes and precise interfaces. Selected work, stack and contact.",
-      },
-      { property: "og:title", content: "Shank — Fullstack Developer" },
-      {
-        property: "og:description",
-        content: "Fullstack engineer: typed APIs, real-time systems and precise product interfaces.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
-  component: Index,
-});
 
 const projects = [
   {
@@ -71,7 +50,7 @@ function useParallax() {
   return y;
 }
 
-function Index() {
+export default function App() {
   const y = useParallax();
 
   return (
